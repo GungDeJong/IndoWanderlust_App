@@ -9,7 +9,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  bool isHide = true;
+  bool isHide = true; // State variable to control password visibility
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,14 +77,14 @@ class _LoginViewState extends State<LoginView> {
                             fontFamily: "PoppinsRegular", fontSize: 14)),
                   ),
                   TextFormField(
-                    obscureText: isHide,
+                    obscureText: isHide, // Toggles password visibility
                     style:
                         TextStyle(fontFamily: "PopppinsRegular", fontSize: 14),
                     decoration: InputDecoration(
                         suffixIcon: IconButton(
                           onPressed: () {
                             isHide = !isHide;
-                            setState(() {});
+                            setState(() {}); // Updates the UI when icon is pressed
                           },
                           icon: Icon(
                             isHide
@@ -114,7 +114,7 @@ class _LoginViewState extends State<LoginView> {
                   Padding(
                     padding: EdgeInsets.only(top: 32),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {}, // Handles Google sign-in button press
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 13.5),
