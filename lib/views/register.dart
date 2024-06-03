@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app/utils/colors.dart';
 
+// Register View Stateful Widget
 class registerView extends StatefulWidget {
   const registerView({super.key});
 
@@ -9,7 +10,8 @@ class registerView extends StatefulWidget {
 }
 
 class _registerViewState extends State<registerView> {
-  bool isHide = true;
+  bool isHide = true; // State variable to control password visibility
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,9 @@ class _registerViewState extends State<registerView> {
                     child: Text(
                       "Welcome To IndoWanderlust",
                       style: TextStyle(
-                          fontFamily: "PoppinsSemiBold", fontSize: 20),
+                        fontFamily: "PoppinsSemiBold", 
+                        fontSize: 20
+                      ),
                     ),
                   ),
                   Padding(
@@ -40,151 +44,215 @@ class _registerViewState extends State<registerView> {
                     child: Text(
                       "Enter your email and password to continue",
                       style: TextStyle(
-                          fontFamily: "PopppinsRegular",
-                          fontSize: 14,
-                          color: grayColor),
+                        fontFamily: "PopppinsRegular",
+                        fontSize: 14,
+                        color: grayColor,
+                      ),
                     ),
                   ),
-                  Text("Full Name",
-                      style: TextStyle(
-                          fontFamily: "PoppinsRegular", fontSize: 14)),
-                  TextFormField(
-                    style:
-                        TextStyle(fontFamily: "PopppinsRegular", fontSize: 14),
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                            vertical: 13.5, horizontal: 16),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            borderSide:
-                                BorderSide(width: 0, style: BorderStyle.none)),
-                        fillColor: formColor,
-                        filled: true,
-                        hintText: "Input Name",
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: backgroundblueskcolory, width: 2.0)),
-                        hintStyle: TextStyle(
-                          color: hintColor,
-                          fontFamily: "PopppinsRegular",
-                          fontSize: 14,
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Text("Username",
-                        style: TextStyle(
-                            fontFamily: "PoppinsRegular", fontSize: 14)),
+                  Text(
+                    "Full Name",
+                    style: TextStyle(
+                      fontFamily: "PoppinsRegular", 
+                      fontSize: 14
+                    ),
                   ),
                   TextFormField(
-                    style:
-                        TextStyle(fontFamily: "PopppinsRegular", fontSize: 14),
+                    style: TextStyle(
+                      fontFamily: "PopppinsRegular", 
+                      fontSize: 14
+                    ),
                     decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                            vertical: 13.5, horizontal: 16),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            borderSide:
-                                BorderSide(width: 0, style: BorderStyle.none)),
-                        fillColor: formColor,
-                        filled: true,
-                        hintText: "Input Username",
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: backgroundblueskcolory, width: 2.0)),
-                        hintStyle: TextStyle(
-                          color: hintColor,
-                          fontFamily: "PopppinsRegular",
-                          fontSize: 14,
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Text("Email",
-                        style: TextStyle(
-                            fontFamily: "PoppinsRegular", fontSize: 14)),
-                  ),
-                  TextFormField(
-                    style:
-                        TextStyle(fontFamily: "PopppinsRegular", fontSize: 14),
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                            vertical: 13.5, horizontal: 16),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            borderSide:
-                                BorderSide(width: 0, style: BorderStyle.none)),
-                        fillColor: formColor,
-                        filled: true,
-                        hintText: "name@gmail.com",
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: backgroundblueskcolory, width: 2.0)),
-                        hintStyle: TextStyle(
-                          color: hintColor,
-                          fontFamily: "PopppinsRegular",
-                          fontSize: 14,
-                        )),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Text("Password",
-                        style: TextStyle(
-                            fontFamily: "PoppinsRegular", fontSize: 14)),
-                  ),
-                  TextFormField(
-                    obscureText: isHide,
-                    style:
-                        TextStyle(fontFamily: "PopppinsRegular", fontSize: 14),
-                    decoration: InputDecoration(
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            isHide = !isHide;
-                            setState(() {});
-                          },
-                          icon: Icon(
-                            isHide
-                                ? Icons.visibility_outlined
-                                : Icons.visibility_off_outlined,
-                            size: 18,
-                            color: hintColor,
-                          ),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 13.5, 
+                        horizontal: 16
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide(
+                          width: 0, 
+                          style: BorderStyle.none
                         ),
-                        contentPadding: EdgeInsets.symmetric(
-                            vertical: 13.5, horizontal: 16),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            borderSide:
-                                BorderSide(width: 0, style: BorderStyle.none)),
-                        fillColor: formColor,
-                        filled: true,
-                        hintText: "Input Password",
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: backgroundblueskcolory, width: 2.0)),
-                        hintStyle: TextStyle(
-                            color: hintColor,
-                            fontFamily: "PopppinsRegular",
-                            fontSize: 14)),
+                      ),
+                      fillColor: formColor,
+                      filled: true,
+                      hintText: "Input Name",
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: backgroundblueskcolory, 
+                          width: 2.0
+                        ),
+                      ),
+                      hintStyle: TextStyle(
+                        color: hintColor,
+                        fontFamily: "PopppinsRegular",
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text(
+                      "Username",
+                      style: TextStyle(
+                        fontFamily: "PoppinsRegular", 
+                        fontSize: 14
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    style: TextStyle(
+                      fontFamily: "PopppinsRegular", 
+                      fontSize: 14
+                    ),
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 13.5, 
+                        horizontal: 16
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide(
+                          width: 0, 
+                          style: BorderStyle.none
+                        ),
+                      ),
+                      fillColor: formColor,
+                      filled: true,
+                      hintText: "Input Username",
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: backgroundblueskcolory, 
+                          width: 2.0
+                        ),
+                      ),
+                      hintStyle: TextStyle(
+                        color: hintColor,
+                        fontFamily: "PopppinsRegular",
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text(
+                      "Email",
+                      style: TextStyle(
+                        fontFamily: "PoppinsRegular", 
+                        fontSize: 14
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    style: TextStyle(
+                      fontFamily: "PopppinsRegular", 
+                      fontSize: 14
+                    ),
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 13.5, 
+                        horizontal: 16
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide(
+                          width: 0, 
+                          style: BorderStyle.none
+                        ),
+                      ),
+                      fillColor: formColor,
+                      filled: true,
+                      hintText: "name@gmail.com",
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: backgroundblueskcolory, 
+                          width: 2.0
+                        ),
+                      ),
+                      hintStyle: TextStyle(
+                        color: hintColor,
+                        fontFamily: "PopppinsRegular",
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text(
+                      "Password",
+                      style: TextStyle(
+                        fontFamily: "PoppinsRegular", 
+                        fontSize: 14
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    obscureText: isHide, // Toggles password visibility
+                    style: TextStyle(
+                      fontFamily: "PopppinsRegular", 
+                      fontSize: 14
+                    ),
+                    decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          isHide = !isHide;
+                          setState(() {}); // Updates the UI when icon is pressed
+                        },
+                        icon: Icon(
+                          isHide
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                          size: 18,
+                          color: hintColor,
+                        ),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 13.5, 
+                        horizontal: 16
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide(
+                          width: 0, 
+                          style: BorderStyle.none
+                        ),
+                      ),
+                      fillColor: formColor,
+                      filled: true,
+                      hintText: "Input Password",
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: backgroundblueskcolory, 
+                          width: 2.0
+                        ),
+                      ),
+                      hintStyle: TextStyle(
+                        color: hintColor,
+                        fontFamily: "PopppinsRegular",
+                        fontSize: 14
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 32),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {}, // Handles sign-in button press
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 13.5),
                         decoration: BoxDecoration(
-                            border: Border.all(color: bordeColor),
-                            color: grayButtoon,
-                            borderRadius: BorderRadius.circular(4)),
+                          border: Border.all(color: bordeColor),
+                          color: grayButtoon,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
                         child: Text(
                           "Sign In",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontFamily: "PoppinsSemiBold",
-                              fontSize: 14,
-                              color: fontwhitecolor),
+                            fontFamily: "PoppinsSemiBold",
+                            fontSize: 14,
+                            color: fontwhitecolor,
+                          ),
                         ),
                       ),
                     ),
@@ -194,33 +262,37 @@ class _registerViewState extends State<registerView> {
                     child: Row(
                       children: [
                         Expanded(
-                            child: Divider(
-                          color: dividerColor,
-                        )),
+                          child: Divider(
+                            color: dividerColor,
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Text(
                             "or",
                             style: TextStyle(
-                                color: dividerColor,
-                                fontFamily: "PoppinsMedium"),
+                              color: dividerColor,
+                              fontFamily: "PoppinsMedium",
+                            ),
                           ),
                         ),
                         Expanded(
-                            child: Divider(
-                          color: dividerColor,
-                        )),
+                          child: Divider(
+                            color: dividerColor,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {}, // Handles Google sign-in button press
                     child: Container(
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(vertical: 13.5),
                       decoration: BoxDecoration(
-                          color: backgroundblueskcolory.withOpacity(0.28),
-                          borderRadius: BorderRadius.circular(4)),
+                        color: backgroundblueskcolory.withOpacity(0.28),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -235,9 +307,10 @@ class _registerViewState extends State<registerView> {
                               "Sign In With Google",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontFamily: "PoppinsSemiBold",
-                                  fontSize: 14,
-                                  color: fontwhitecolor),
+                                fontFamily: "PoppinsSemiBold",
+                                fontSize: 14,
+                                color: fontwhitecolor,
+                              ),
                             ),
                           ),
                         ],
@@ -255,17 +328,21 @@ class _registerViewState extends State<registerView> {
               children: [
                 Text(
                   "Already have an account?, ",
-                  style:
-                      TextStyle(fontFamily: "PoppinsRegular", color: grayColor),
+                  style: TextStyle(
+                    fontFamily: "PoppinsRegular", 
+                    color: grayColor
+                  ),
                 ),
                 Text(
                   "Sign In Now",
                   style: TextStyle(
-                      fontFamily: "PoppinsSemiBold", color: fontbluecolor),
-                )
+                    fontFamily: "PoppinsSemiBold", 
+                    color: fontbluecolor
+                  ),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
