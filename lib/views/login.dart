@@ -10,6 +10,7 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   bool isHide = true; // State variable to control password visibility
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,7 +115,7 @@ class _LoginViewState extends State<LoginView> {
                   Padding(
                     padding: EdgeInsets.only(top: 32),
                     child: GestureDetector(
-                      onTap: () {}, // Handles Google sign-in button press
+                      onTap: () {}, // Handles sign-in button press
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 13.5),
@@ -158,7 +159,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {}, // Handles Google sign-in button press
                     child: Container(
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(vertical: 13.5),
