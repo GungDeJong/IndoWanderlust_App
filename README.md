@@ -1,16 +1,29 @@
-# app
+# AwesomeApp 🚀
 
-A new Flutter project.
+Welcome to IndoWanderlust – where exploring meets satisfaction!
 
-## Getting Started
+![IndoWanderlust](https://yourapp.com/banner.png)
 
-This project is a starting point for a Flutter application.
+## Introduction
 
-A few resources to get you started if this is your first Flutter project:
+Welcome to IndoWanderlust! This mobile application is designed?. Whether you're wanted to explore the beauty of Indonesia, or just someone looking for event held, Wanderlust has got you covered.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Homepage:** [Describe Feature 1]
+- **Feature 2:** [Describe Feature 2]
+- **Feature 3:** [Describe Feature 3]
+- **...and much more!**
+
+## Screenshots
+
+![Screenshot 1](https://github.com/GungDeJong/IndoWanderlust_App/blob/main/assets/images/image4.png)
+![Screenshot 2](https://github.com/GungDeJong/IndoWanderlust_App/blob/main/assets/images/welcome.png)
+![Payment](https://github.com/GungDeJong/IndoWanderlust_App/blob/main/assets/images/payment.png)
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/AwesomeApp.git](https://github.com/GungDeJong/IndoWanderlust_App.git
