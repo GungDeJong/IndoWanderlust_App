@@ -2,7 +2,6 @@
 
 Welcome to IndoWanderlust – where exploring meets satisfaction!
 
-![IndoWanderlust](https://yourapp.com/banner.png)
 
 ## Introduction
 
