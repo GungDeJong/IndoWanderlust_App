@@ -1,5 +1,5 @@
 import 'package:app/utils/colors.dart';
-import 'package:app/views/onboarding.dart';
+import 'package:app/views/homepage.dart';
 import 'package:flutter/material.dart';
 
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: backgroundblueskcolory),
         useMaterial3: true,
       ),
-      home: const OnboardingView(),
+      home: HomeView(),
     );
   }
 }
