@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
             Icon(Icons.explore, color: Colors.blue),
             SizedBox(width: 10),
             Text(
-              "Wonderlust Travel App",
+              "Indo-Wanderlust",
               style: GoogleFonts.montserrat(color: Colors.black),
             ),
           ],
@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
             children: [
               SizedBox(height: 20.0),
               Text(
-                "Explore the world today",
+                "Explore Beautifull Indonesia",
                 style: GoogleFonts.montserrat(
                   fontSize: 28.0,
                   fontWeight: FontWeight.bold,
@@ -84,41 +84,67 @@ class HomeView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20.0),
-              _buildSectionTitle("Popular Package in Asia"),
+              _buildSectionTitle("Visit Pulau Komodo"),
               _buildHorizontalList(context, [
                 _buildTravelInfoCard(
                   context,
-                  imgPath: 'assets/images/image4.png',
-                  title: 'Koh Rong Samloem',
-                  description: '100 reviews',
-                ),
-                _buildTravelInfoCard(
-                  context,
-                  imgPath: 'assets/images/image4.png',
-                  title: 'Long-Tail Boat',
+                  imgPath: 'assets/images/gambarKomodoSigma.jpg',
+                  title: 'Pulau Komodo',
                   description: '120 reviews',
                 ),
+                _buildTravelInfoCard(
+                  context,
+                  imgPath: 'assets/images/gambarKomodoGelud.jpeg',
+                  title: 'Komodo Doing Gelud',
+                  description: '120 reviews',
+                ),
+                _buildTravelInfoCard(
+                  context,
+                  imgPath: 'assets/images/pulauKomodo.jpg',
+                  title: 'Pulau Komodo',
+                  description: '120 reviews',
+                ),
+                
               ]),
               SizedBox(height: 20.0),
-              _buildSectionTitle("Expanding your trip around the world"),
+              _buildSectionTitle("Expanding your trip around Java"),
               _buildHorizontalList(context, [
-                _buildDestinationCard(context, 'assets/images/image4.png', 'Cambodia'),
-                _buildDestinationCard(context, 'assets/images/image4.png', 'Bangladesh'),
+                _buildDestinationCard(context, 'assets/images/CandiBorobudur.jpg', 'Candi Borobudur'),
+                _buildDestinationCard(context, 'assets/images/gunungBromo.jpg', 'Raja Ampat'),
+                
               ]),
               SizedBox(height: 20.0),
               _buildSectionTitle("Travel beyond the boundary"),
               _buildHorizontalList(context, [
                 _buildTravelInfoCard(
                   context,
-                  imgPath: 'assets/images/image4.png',
-                  title: 'Tokyo, Japan',
+                  imgPath: 'assets/images/tanaToraja.jpg',
+                  title: 'Tana Toraja',
+                  description: '130 reviews',
+                ),
+                _buildTravelInfoCard(
+                  context,
+                  imgPath: 'assets/images/giliTawangan.jpg',
+                  title: 'Gili Tawangan.',
                   description: '100 reviews',
                 ),
                 _buildTravelInfoCard(
                   context,
-                  imgPath: 'assets/images/image4.png',
-                  title: 'Kuala Lumpur',
-                  description: '150 reviews',
+                  imgPath: 'assets/images/danauToba.jpg',
+                  title: 'Danau Toba.',
+                  description: '122 reviews',
+                ),
+                _buildTravelInfoCard(
+                  context,
+                  imgPath: 'assets/images/wakatobi.jpg',
+                  title: 'Wakatobi.',
+                  description: '250 reviews',
+                ),
+                _buildTravelInfoCard(
+                  context,
+                  imgPath: 'assets/images/ujungKulon.jpg',
+                  title: 'Ujung Kulon.',
+                  description: '85 reviews',
                 ),
               ]),
             ],
