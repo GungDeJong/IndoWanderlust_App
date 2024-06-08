@@ -1,7 +1,9 @@
-import 'package:app/utils/colors.dart';
-import 'package:app/views/homepage.dart';
+import 'package:app/views/notifikasi_view.dart';
+import 'package:app/views/wishlish_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:app/utils/colors.dart';
+import 'package:app/views/home_view.dart';
+import 'package:app/views/profile_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,17 +12,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Onboarding',
+      title: 'Wanderlust Travel App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: backgroundblueskcolory),
         useMaterial3: true,
       ),
-      home: HomeView(),
+      routes: {
+        '/': (context) => HomeView(),
+        '/wishlist': (context) => WishlistView(),
+        '/notification': (context) => NotificationView(),
+        '/profile': (context) => ProfileView(),
+        // Tambahkan route lain sesuai kebutuhan
+      },
     );
   }
 }

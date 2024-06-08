@@ -1,3 +1,4 @@
+// lib/views/details_page.dart
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatelessWidget {
@@ -46,6 +47,5 @@ class DetailsPage extends StatelessWidget {
         ),
       ),
     );
- 
   }
 }
