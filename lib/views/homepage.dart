@@ -83,7 +83,7 @@ class HomeView extends StatelessWidget {
                   _buildCategoryButton(context, Icons.more_horiz, 'More'),
                 ],
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 20.10),
               _buildSectionTitle("Visit Pulau Komodo"),
               _buildHorizontalList(context, [
                 _buildTravelInfoCard(
