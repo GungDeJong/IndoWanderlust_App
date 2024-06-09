@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "635161778297",
+    "project_id": "indowanderlustapp",
+    "storage_bucket": "indowanderlustapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635161778297:android:2892586bb07df5f7135ca8",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMVBbqgcRmHmzxDH_7bxJYLsJgW4Cbyfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

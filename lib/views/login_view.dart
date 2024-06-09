@@ -3,6 +3,7 @@ import 'package:app/views/homepage.dart';
 import 'package:app/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -13,6 +14,27 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   bool isHide = true;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  void _signInWithEmailPassword() async {
+      try {
+        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+          email: emailController.text,
+          password: passwordController.text,
+        );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomeView()),
+        );
+      } catch (e) {
+        print("Error: $e");
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text("Failed to sign in. Please check your credentials."),
+        ));
+      }
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +75,7 @@ class _LoginViewState extends State<LoginView> {
                       style: TextStyle(
                           fontFamily: "PoppinsRegular", fontSize: 14)),
                   TextFormField(
+                    controller: emailController,
                     style:
                         TextStyle(fontFamily: "PopppinsRegular", fontSize: 14),
                     decoration: InputDecoration(
@@ -81,6 +104,7 @@ class _LoginViewState extends State<LoginView> {
                             fontFamily: "PoppinsRegular", fontSize: 14)),
                   ),
                   TextFormField(
+                    controller: passwordController,
                     obscureText: isHide,
                     style:
                         TextStyle(fontFamily: "PopppinsRegular", fontSize: 14),
@@ -118,7 +142,7 @@ class _LoginViewState extends State<LoginView> {
                   Padding(
                     padding: EdgeInsets.only(top: 32),
                     child: GestureDetector(
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView())),
+                      onTap: _signInWithEmailPassword,
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 13.5),

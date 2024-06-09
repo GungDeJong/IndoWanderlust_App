@@ -1,7 +1,7 @@
 import 'package:app/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:app/utils/colors.dart';
-import 'package:flutter/widgets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -12,7 +12,35 @@ class RegisterView extends StatefulWidget {
 
 class _RegisterViewState extends State<RegisterView> {
   bool isHide = true;
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
+  Future<void> _register() async {
+      try {
+        UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailController.text,
+          password: _passwordController.text,
+        );
+        // Registration successful, you can navigate to another screen or perform additional tasks here
+        // For example, you can navigate to the login screen
+        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
+      } catch (e) {
+        // Handle registration errors
+        print("Error registering user: $e");
+      }
+    }
+
+  @override
+  void dispose() {
+    _fullNameController.dispose();
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -237,7 +265,7 @@ class _RegisterViewState extends State<RegisterView> {
                   Padding(
                     padding: EdgeInsets.only(top: 32),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: _register,
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 13.5),
