@@ -2,7 +2,6 @@ import 'package:app/utils/colors.dart';
 import 'package:app/views/home_view.dart';
 import 'package:app/views/register_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginView extends StatefulWidget {

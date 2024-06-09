@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => HomeView(),
+        '/': (context) => RegisterView(),
         '/wishlist': (context) => WishlistView(),
         '/notification': (context) => NotificationView(),
         '/profile': (context) => ProfileView(),
