@@ -1,5 +1,5 @@
 import 'package:app/utils/colors.dart';
-import 'package:app/views/homepage.dart';
+import 'package:app/views/home_view.dart';
 import 'package:app/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -161,7 +161,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  Padding(
+                  /*Padding(
                     padding: const EdgeInsets.symmetric(vertical: 32),
                     child: Row(
                       children: [
@@ -215,12 +215,12 @@ class _LoginViewState extends State<LoginView> {
                         ],
                       ),
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             ),
           ),
-          Padding(
+          /*Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -240,7 +240,7 @@ class _LoginViewState extends State<LoginView> {
                 )
               ],
             ),
-          )
+          )*/
         ],
       ),
     );

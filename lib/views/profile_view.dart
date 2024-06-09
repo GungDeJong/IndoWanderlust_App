@@ -37,18 +37,64 @@ class ProfileView extends StatelessWidget {
                 email, // Use the email of the user
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
+              ElevatedButton(
+                onPressed: () async {
+                  // Sign out the user
+                  await FirebaseAuth.instance.signOut();
+                  // Navigate back to the home screen or any other screen
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                ),
+                child: Text(
+                  'Logout',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
             ],
+
           ),
         ),
       );
-    } else {
-      // If the user is not logged in, show a loading indicator or redirect to the login screen
+    }else {
       return Scaffold(
         appBar: AppBar(
           title: Text('Profile'),
         ),
         body: Center(
-          child: CircularProgressIndicator(), // Show a loading indicator
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Login untuk membuka profile',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 20.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Navigate to the login screen
+                  Navigator.pushNamed(context, '/login');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       );
     }

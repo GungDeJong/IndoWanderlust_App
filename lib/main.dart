@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/wishlist': (context) => WishlistView(),
         '/notification': (context) => NotificationView(),
         '/profile': (context) => ProfileView(),
+        '/login': (context) => LoginView(),
         // Tambahkan route lain sesuai kebutuhan
       },
     );
