@@ -4,7 +4,6 @@ import 'package:app/utils/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
@@ -14,23 +13,34 @@ class RegisterView extends StatefulWidget {
 
 class _RegisterViewState extends State<RegisterView> {
   bool isHide = true;
+  bool isButtonEnabled = false;
   final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  Future<void> _register() async {
-    if (_fullNameController.text.isEmpty ||
-        _usernameController.text.isEmpty ||
-        _emailController.text.isEmpty ||
-        _passwordController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Please fill in all fields")),
-      );
-      return;
-    }
+  @override
+  void initState() {
+    super.initState();
+    _fullNameController.addListener(_validateForm);
+    _usernameController.addListener(_validateForm);
+    _emailController.addListener(_validateForm);
+    _passwordController.addListener(_validateForm);
+  }
 
-     try {
+  void _validateForm() {
+    setState(() {
+      isButtonEnabled = _fullNameController.text.isNotEmpty &&
+          _usernameController.text.isNotEmpty &&
+          _emailController.text.isNotEmpty &&
+          _passwordController.text.isNotEmpty;
+    });
+  }
+
+  Future<void> _register() async {
+    if (!isButtonEnabled) return;
+
+    try {
       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: _emailController.text,
         password: _passwordController.text,
@@ -45,6 +55,10 @@ class _RegisterViewState extends State<RegisterView> {
           'email': _emailController.text,
         });
 
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Register successful, you can sign in now.")),
+        );
+
         // Registration successful, navigate to the login screen
         Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
       }
@@ -58,6 +72,10 @@ class _RegisterViewState extends State<RegisterView> {
 
   @override
   void dispose() {
+    _fullNameController.removeListener(_validateForm);
+    _usernameController.removeListener(_validateForm);
+    _emailController.removeListener(_validateForm);
+    _passwordController.removeListener(_validateForm);
     _fullNameController.dispose();
     _usernameController.dispose();
     _emailController.dispose();
@@ -303,7 +321,7 @@ class _RegisterViewState extends State<RegisterView> {
                           padding: EdgeInsets.symmetric(vertical: 13.5),
                           decoration: BoxDecoration(
                             border: Border.all(color: bordeColor),
-                            color: grayButtoon,
+                            color: isButtonEnabled ? backgroundblueskcolory : grayColor,
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(

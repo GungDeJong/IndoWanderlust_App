@@ -1,6 +1,5 @@
 import 'package:app/utils/colors.dart';
 import 'package:app/views/home_view.dart';
-import 'package:app/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -18,22 +17,31 @@ class _LoginViewState extends State<LoginView> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void _signInWithEmailPassword() async {
-      try {
-        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-          email: emailController.text,
-          password: passwordController.text,
-        );
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => HomeView()),
-        );
-      } catch (e) {
-        print("Error: $e");
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text("Failed to sign in. Please check your credentials."),
-        ));
-      }
+    try {
+    await _auth.signInWithEmailAndPassword(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+
+      // Show a success message
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Login successful!"),
+        backgroundColor: Colors.green,
+      ));
+
+      // Navigate to the home screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeView()),
+      );
+    } catch (e) {
+      print("Error: $e");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Failed to sign in. Please check your credentials."),
+        backgroundColor: Colors.red,
+      ));
     }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -160,61 +168,6 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  /*Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 32),
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Divider(
-                          color: dividerColor,
-                        )),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            "or",
-                            style: TextStyle(
-                                color: dividerColor,
-                                fontFamily: "PoppinsMedium"),
-                          ),
-                        ),
-                        Expanded(
-                            child: Divider(
-                          color: dividerColor,
-                        )),
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 13.5),
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(4)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/images/google.png",
-                            width: 21,
-                            height: 21,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 12),
-                            child: Text(
-                              "Sign In With Google",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontFamily: "PoppinsSemiBold",
-                                  fontSize: 14,
-                                  color: fontwhitecolor),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),*/
                 ],
               ),
             ),
