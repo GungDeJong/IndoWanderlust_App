@@ -220,27 +220,27 @@ class _LoginViewState extends State<LoginView> {
               ),
             ),
           ),
-          /*Padding(
+          Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Don't have an account?, ",
+                  "Login as a ",
                   style:
                       TextStyle(fontFamily: "PoppinsRegular", color: grayColor),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterView())),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView())),
                   child: Text(
-                    "Sign Up Now",
+                    "Guest",
                     style: TextStyle(
                         fontFamily: "PoppinsSemiBold", color: fontbluecolor),
                   ),
                 )
               ],
             ),
-          )*/
+          )
         ],
       ),
     );

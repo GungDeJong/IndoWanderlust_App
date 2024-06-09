@@ -70,7 +70,7 @@ class ProfileView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Login untuk membuka profile',
+                'Login to open your profile',
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
