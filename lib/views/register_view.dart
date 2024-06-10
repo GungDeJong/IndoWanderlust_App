@@ -336,66 +336,7 @@ class _RegisterViewState extends State<RegisterView> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 32),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Divider(
-                              color: dividerColor,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Text(
-                              "or",
-                              style: TextStyle(
-                                color: dividerColor,
-                                fontFamily: "PoppinsMedium",
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Divider(
-                              color: dividerColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 13.5),
-                        decoration: BoxDecoration(
-                          color: backgroundblueskcolory.withOpacity(0.28),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              "assets/images/google.png",
-                              width: 21,
-                              height: 21,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 12),
-                              child: Text(
-                                "Sign Up With Google",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontFamily: "PoppinsSemiBold",
-                                  fontSize: 14,
-                                  color: fontwhitecolor,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+
                   ],
                 ),
               ),

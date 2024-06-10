@@ -10,20 +10,21 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  String fullName = 'Loading...'; // Default value until fetched from Firestore
+  String fullName = 'Login to user profile'; // Default value until fetched from Firestore
   String userName = '';
   String email = '';
+  User? user;
 
   @override
   void initState() {
     super.initState();
     // Get the current user from Firebase Authentication
-    User? user = FirebaseAuth.instance.currentUser;
+    user = FirebaseAuth.instance.currentUser;
 
     // Check if the user is logged in
     if (user != null) {
       // If the user is logged in, fetch user data from Firestore
-      fetchUserData(user.uid); // Pass user's UID
+      fetchUserData(user!.uid); // Pass user's UID
     }
   }
 
@@ -56,7 +57,8 @@ class _ProfileViewState extends State<ProfileView> {
         title: Text('Profile'),
       ),
       body: Center(
-        child: Column(
+        child: user != null
+            ? Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
@@ -101,6 +103,36 @@ class _ProfileViewState extends State<ProfileView> {
               ),
               child: Text(
                 'Logout',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        )
+            : Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Login to user profile',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the login screen
+                Navigator.pushNamed(context, '/login'); // Replace '/login' with your login route
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              child: Text(
+                'Login',
                 style: TextStyle(
                   fontSize: 16.0,
                   color: Colors.white,

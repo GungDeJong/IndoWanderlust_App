@@ -1,5 +1,6 @@
 import 'package:app/utils/colors.dart';
 import 'package:app/views/home_view.dart';
+import 'package:app/views/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -190,6 +191,29 @@ class _LoginViewState extends State<LoginView> {
                         fontFamily: "PoppinsSemiBold", color: fontbluecolor),
                   ),
                 )
+
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Dont have account? ",
+                  style:
+                  TextStyle(fontFamily: "PoppinsRegular", color: grayColor),
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterView())),
+                  child: Text(
+                    "Register",
+                    style: TextStyle(
+                        fontFamily: "PoppinsSemiBold", color: fontbluecolor),
+                  ),
+                )
+
               ],
             ),
           )
