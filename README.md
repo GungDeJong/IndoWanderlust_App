@@ -1,4 +1,4 @@
-# AwesomeApp 🚀
+# Indo-WanderLust 🚀
 
 Welcome to IndoWanderlust – where exploring meets satisfaction!
 
@@ -9,7 +9,17 @@ Welcome to IndoWanderlust! This mobile application is designed?. Whether you're 
 
 ## Features
 
-- **Homepage:** [Describe Feature 1]
+- **Homepage:** Pada Homepage terdapat beberan fitur yang bisa dijelajahi seperti Informasi Umum, Wisata, dan Berita.
+
+**Informasi Umum**
+Informasi Umum menyediakan berbagai informasi dasar yang penting bagi para wisatawan. Seperti Visa dan Sejarah Indonesia.
+
+**Wisata**
+Fitur Wisata membantu pengguna menemukan destinasi wisata terbaik di Indonesia. Seperti Labuan Bajo dan Gunung Bromo.
+
+**Berita**
+Fitur Berita menyediakan berita terbaru dan informasi terkini terkait pariwisata dan budaya Indonesia. Artikel-artikel berita ini mencakup berbagai topik menarik yang relevan bagi para wisatawan dan penduduk lokal.
+
 - **Feature 2:** [Describe Feature 2]
 - **Feature 3:** [Describe Feature 3]
 - **...and much more!**
@@ -17,12 +27,3 @@ Welcome to IndoWanderlust! This mobile application is designed?. Whether you're 
 ## Screenshots
 
 ![Screenshot 1](https://github.com/GungDeJong/IndoWanderlust_App/blob/main/assets/images/image4.png)
-![Screenshot 2](https://github.com/GungDeJong/IndoWanderlust_App/blob/main/assets/images/welcome.png)
-![Payment](https://github.com/GungDeJong/IndoWanderlust_App/blob/main/assets/images/payment.png)
-
-## Installation
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/AwesomeApp.git](https://github.com/GungDeJong/IndoWanderlust_App.git
