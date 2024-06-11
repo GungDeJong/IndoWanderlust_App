@@ -11,20 +11,44 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  List<Map<String, dynamic>> allWisata = [];
+  List<Map<String, dynamic>> searchResults = [];
+  String _searchQuery = '';
 
   Future<List<Map<String, dynamic>>> fetchInformasi() async {
     QuerySnapshot querySnapshot = await _firestore.collection('informasi').get();
     return querySnapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
   }
 
-  Future<List<Map<String, dynamic>>> fetchWisata() async {
-    QuerySnapshot querySnapshot = await _firestore.collection('wisata').get();
-    return querySnapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
-  }
-
   Future<List<Map<String, dynamic>>> fetchBerita() async {
     QuerySnapshot querySnapshot = await _firestore.collection('berita').get();
     return querySnapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
+  }
+
+  void searchDestination(String query) {
+    final results = allWisata.where((wisata) {
+      final titleLower = wisata['judul'].toLowerCase();
+      final queryLower = query.toLowerCase();
+      return titleLower.contains(queryLower);
+    }).toList();
+    setState(() {
+      searchResults = results;
+      _searchQuery = query;
+    });
+  }
+
+  Stream<List<Map<String, dynamic>>> fetchWisata() {
+    return _firestore.collection('wisata').snapshots().map(
+      (snapshot) {
+        return snapshot.docs.map((doc) {
+          return {
+            'gambar': doc['gambar'],
+            'judul': doc['judul'],
+            'deskripsi': doc['deskripsi'],
+          };
+        }).toList();
+      },
+    );
   }
 
   @override
@@ -43,7 +67,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(width: 10),
             Text(
-              "Indo-Wanderlust",
+              "Indo Wanderlust",
               style: GoogleFonts.montserrat(color: Colors.black),
             ),
           ],
@@ -128,8 +152,8 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 24.0),
               _buildSectionTitle("Wisata"),
-              FutureBuilder<List<Map<String, dynamic>>>(
-                future: fetchWisata(),
+              StreamBuilder<List<Map<String, dynamic>>>(
+                stream: fetchWisata(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(child: CircularProgressIndicator());
@@ -138,9 +162,11 @@ class _HomePageState extends State<HomePage> {
                   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                     return Text('No information available');
                   } else {
+                    allWisata = snapshot.data!;
+                    final dataToShow = _searchQuery.isNotEmpty ? searchResults : allWisata;
                     return _buildHorizontalList(
                       context,
-                      snapshot.data!.map<Widget>((wisata) {
+                      dataToShow.map<Widget>((wisata) {
                         return _buildTravelInfoCard(
                           context,
                           imgPath: wisata['gambar'],
