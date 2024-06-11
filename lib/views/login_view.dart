@@ -33,7 +33,7 @@ class _LoginViewState extends State<LoginView> {
       // Navigate to the home screen
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeView()),
+        MaterialPageRoute(builder: (context) => HomePage()),
       );
     } catch (e) {
       print("Error: $e");
@@ -186,7 +186,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 GestureDetector(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeView())),
+                      MaterialPageRoute(builder: (context) => HomePage())),
                   child: Text(
                     "Guest",
                     style: TextStyle(
