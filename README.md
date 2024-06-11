@@ -24,6 +24,21 @@ Fitur Berita menyediakan berita terbaru dan informasi terkini terkait pariwisata
 - **Feature 3:** [Describe Feature 3]
 - **...and much more!**
 
+## Tech Stack
+
+- Flutter
+- Dart
+- Firebase
+
+## Authors
+
+- [@GungDeJong](https://github.com/GungDeJong)
+- [@Dewa899](https://github.com/Dewa899)
+- [@AdhiGozalt](https://github.com/AdhiGozalt)
+- [@aclrdhv](https://github.com/aclrdhv)
+- [@farhankml](https://github.com/farhanakml)
+- [@gibranariq](https://github.com/gibranariq)
+  
 ## Screenshots
 
 ![Screenshot 1](https://github.com/GungDeJong/IndoWanderlust_App/blob/main/assets/images/image4.png)
