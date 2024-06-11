@@ -11,14 +11,14 @@ Welcome to IndoWanderlust! This mobile application is designed?. Whether you're 
 
 - **Homepage:** Pada Homepage terdapat beberan fitur yang bisa dijelajahi seperti Informasi Umum, Wisata, dan Berita.
 
-**Informasi Umum**
-Informasi Umum menyediakan berbagai informasi dasar yang penting bagi para wisatawan. Seperti Visa dan Sejarah Indonesia.
+**Informasi Umum** <br />
+Informasi Umum menyediakan berbagai informasi dasar yang penting bagi para wisatawan. Seperti Visa dan Sejarah Indonesia.<br />
 
-**Wisata**
-Fitur Wisata membantu pengguna menemukan destinasi wisata terbaik di Indonesia. Seperti Labuan Bajo dan Gunung Bromo.
+**Wisata**<br />
+Fitur Wisata membantu pengguna menemukan destinasi wisata terbaik di Indonesia. Seperti Labuan Bajo dan Gunung Bromo.<br />
 
-**Berita**
-Fitur Berita menyediakan berita terbaru dan informasi terkini terkait pariwisata dan budaya Indonesia. Artikel-artikel berita ini mencakup berbagai topik menarik yang relevan bagi para wisatawan dan penduduk lokal.
+**Berita**<br />
+Fitur Berita menyediakan berita terbaru dan informasi terkini terkait pariwisata dan budaya Indonesia. Artikel-artikel berita ini mencakup berbagai topik menarik yang relevan bagi para wisatawan dan penduduk lokal.<br />
 
 - **Feature 2:** [Describe Feature 2]
 - **Feature 3:** [Describe Feature 3]
