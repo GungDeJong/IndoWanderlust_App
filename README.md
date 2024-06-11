@@ -5,7 +5,7 @@ Welcome to IndoWanderlust – where exploring meets satisfaction!
 
 ## Introduction
 
-Welcome to IndoWanderlust! This mobile application is designed?. Whether you're wanted to explore the beauty of Indonesia, or just someone looking for event held, Wanderlust has got you covered.
+IndoWanderLust adalah aplikasi yang dirancang untuk membantu Anda menjelajahi keindahan dan informasi penting tentang Indonesia.
 
 ## Features
 
