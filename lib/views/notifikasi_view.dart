@@ -27,9 +27,9 @@ class NotificationView extends StatelessWidget {
             itemCount: data.size,
             itemBuilder: (context, index) {
               final notification = data.docs[index];
-              final description = notification['description'];
-              final truncatedDescription = description.length > 50
-                  ? '${description.substring(0, 100)}...'
+              final description = notification['subtitle'];
+              final truncatedDescription = description.length > 150
+                  ? '${description.substring(0, 150)}...'
                   : description;
 
               return ListTile(
