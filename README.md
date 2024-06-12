@@ -20,9 +20,11 @@ Fitur Wisata membantu pengguna menemukan destinasi wisata terbaik di Indonesia. 
 **Berita**<br />
 Fitur Berita menyediakan berita terbaru dan informasi terkini terkait pariwisata dan budaya Indonesia. Artikel-artikel berita ini mencakup berbagai topik menarik yang relevan bagi para wisatawan dan penduduk lokal.<br />
 
-- **Feature 2:** [Describe Feature 2]
-- **Feature 3:** [Describe Feature 3]
-- **...and much more!**
+**Notifikasi**<br />
+Dapatkan notifikasi terbaru berupa tempat wisata baru atau hal menarik lainnya terkait Indo-Wonderlust
+
+**Profile**<br />
+Login agar dapat menggunakan fitur profile dan anda pun dapat logout dan menggunakan aplikasi tanpa harus login
 
 ## Tech Stack
 
