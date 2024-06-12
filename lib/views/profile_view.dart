@@ -10,7 +10,7 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  String fullName = 'Login to user profile'; // Default value until fetched from Firestore
+  String fullName = 'Login to use profile'; // Default value until fetched from Firestore
   String userName = '';
   String email = '';
   User? user;
