@@ -1,6 +1,5 @@
 import 'package:app/views/notifikasi_view.dart';
 import 'package:app/views/register_view.dart';
-import 'package:app/views/wishlish_view.dart';
 import 'package:flutter/material.dart';
 import 'package:app/utils/colors.dart';
 import 'package:app/views/profile_view.dart';
@@ -30,7 +29,6 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => LoginView(),
-        '/wishlist': (context) => WishlistView(),
         '/notification': (context) => NotificationView(),
         '/profile': (context) => ProfileView(),
         '/login': (context) => LoginView(),
