@@ -29,11 +29,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => RegisterView(),
+        '/': (context) => LoginView(),
         '/wishlist': (context) => WishlistView(),
         '/notification': (context) => NotificationView(),
         '/profile': (context) => ProfileView(),
         '/login': (context) => LoginView(),
+        '/register': (context) => RegisterView()
         // Tambahkan route lain sesuai kebutuhan
       },
     );
